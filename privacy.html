@@ -179,7 +179,7 @@
 
         <h1>Privacy Policy</h1>
         <p class="meta"><strong>Effective Date:</strong> March 26, 2026</p>
-        <p class="meta"><strong>Last Updated:</strong> March 31, 2026</p>
+        <p class="meta"><strong>Last Updated:</strong> April 1, 2026</p>
         <p class="meta"><strong>Developer:</strong> Ardin, Einzelunternehmen (sole proprietorship), Switzerland</p>
         <p class="meta"><strong>Website:</strong> <a href="https://1percentmethod.ch">1percentmethod.ch</a></p>
         <p class="meta"><strong>App:</strong> 1% Method — AI-Powered Fitness Coaching</p>
@@ -231,6 +231,11 @@
                     <td>Fitness integration</td>
                 </tr>
                 <tr>
+                    <td>iCloud backup (optional)</td>
+                    <td>iCloud (Apple-managed)</td>
+                    <td>Plan &amp; settings backup/restore</td>
+                </tr>
+                <tr>
                     <td>Subscription status</td>
                     <td>Managed by Apple</td>
                     <td>Access to premium features</td>
@@ -259,38 +264,45 @@
 
         <hr>
 
-        <h2>4. AI Coaching &amp; the Anthropic API</h2>
-        <p>1% Method uses the Anthropic Claude API to power AI coaching features. Here is how this works:</p>
+        <h2>4. AI-Powered Features &amp; Third-Party AI Service (Anthropic)</h2>
+        <p>1% Method uses <strong>Anthropic's Claude AI</strong> (a US-based AI company) to generate personalized fitness plans and provide AI coaching responses. <strong>The App requests your explicit consent before any data is sent to Anthropic.</strong></p>
+
+        <h3>4.1 How It Works</h3>
         <ul>
-            <li>The API key is managed by the Developer — <strong>you do not need to provide one.</strong></li>
-            <li>When you use AI features, the App sends a prompt containing your fitness context (routine, preferences, progress) from your device to Anthropic's servers.</li>
+            <li>The API key is managed by the Developer — you do not need to provide one.</li>
+            <li>When you use AI features (plan generation, AI coaching chat), your request is sent from your device to our secure proxy server, which forwards it to Anthropic's API.</li>
             <li>The AI-generated response is returned to your device and stored locally.</li>
+            <li><strong>You must give explicit consent</strong> before AI features are used for the first time. This consent is requested in the App before any data is transmitted.</li>
         </ul>
 
-        <p><strong>What is sent to Anthropic:</strong></p>
+        <h3>4.2 What Data Is Sent to Anthropic</h3>
         <ul>
-            <li>A text prompt containing your fitness preferences, goals, and plan parameters as you configured them in the App</li>
+            <li>Your fitness preferences, goals, and schedule as you configured them in the App</li>
+            <li>Your chat messages when using the AI coaching feature</li>
+            <li>Contextual fitness data (e.g., completion stats, streak info) to personalize coaching responses</li>
         </ul>
 
-        <p><strong>What is NOT sent to Anthropic:</strong></p>
+        <h3>4.3 What Is NOT Sent to Anthropic</h3>
         <ul>
             <li>Your name or identity</li>
             <li>Your HealthKit data</li>
             <li>Your location</li>
             <li>Your device identifiers</li>
+            <li>Your Apple ID or payment information</li>
         </ul>
 
-        <p><strong>Anthropic's data handling:</strong> The data sent to Anthropic is subject to Anthropic's own privacy policy and terms. We encourage you to review them:</p>
+        <h3>4.4 Anthropic's Data Handling</h3>
+        <p>Data sent to Anthropic is subject to Anthropic's own privacy policy and terms. We encourage you to review them:</p>
         <ul>
             <li>Anthropic Privacy Policy: <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a></li>
             <li>Anthropic API Terms: <a href="https://www.anthropic.com/api-terms">anthropic.com/api-terms</a></li>
         </ul>
-        <p>We are not responsible for how Anthropic processes data sent to their API. By using the AI coaching features, you acknowledge that your prompts are processed by Anthropic under their policies.</p>
+        <p>Anthropic processes data under their API terms, which state that API inputs and outputs are not used to train their models. We are not responsible for how Anthropic processes data sent to their API.</p>
 
         <hr>
 
         <h2>5. Subscriptions &amp; Payments</h2>
-        <p>1% Method offers auto-renewable subscriptions (monthly CHF 6.90, yearly CHF 44.90) with a 7-day free trial, managed entirely by Apple through the App Store.</p>
+        <p>1% Method offers auto-renewable subscriptions (monthly CHF 6.90, yearly CHF 44.90) with a 7-day free trial for new subscribers, managed entirely by Apple through the App Store.</p>
         <ul>
             <li><strong>We do not process payments.</strong> Apple handles all billing.</li>
             <li><strong>We do not receive or store</strong> your payment information, credit card details, Apple ID, or any financial data.</li>
@@ -305,7 +317,7 @@
         <ul>
             <li>No analytics frameworks</li>
             <li>No tracking pixels or identifiers</li>
-            <li>No third-party SDKs (other than Apple's native frameworks and the Anthropic API client)</li>
+            <li>No third-party SDKs (only Apple's native frameworks; AI features use server-side API calls, not an embedded SDK)</li>
             <li>No advertising SDKs</li>
             <li>No cookies</li>
             <li>No fingerprinting</li>
@@ -321,7 +333,7 @@
             <li><strong>Delete specific data:</strong> Use in-app features to clear individual records.</li>
             <li><strong>Delete all data:</strong> Use the <strong>"Delete All Data"</strong> button in the App's settings. This permanently and irreversibly removes all App data from your device.</li>
             <li><strong>Delete the App:</strong> Uninstalling 1% Method removes all locally stored SwiftData. Note that HealthKit data written by 1% Method (workouts, water logs) remains in Apple Health unless you manually delete it there.</li>
-            <li><strong>iCloud backup:</strong> If enabled, your plan configuration is backed up to iCloud Key-Value Storage tied to your Apple ID and can be restored on a new device.</li>
+            <li><strong>iCloud backup:</strong> If enabled, your plan and settings backup in iCloud is managed by Apple and can be deleted through iCloud settings.</li>
         </ul>
         <p>Since we do not store any data on servers, there is nothing for us to delete on our end.</p>
 
@@ -330,7 +342,7 @@
         <h2>8. Data Security</h2>
         <ul>
             <li>All App data is stored in SwiftData on your device, protected by your device's passcode, Face ID, or Touch ID.</li>
-            <li>Communication with the Anthropic API uses HTTPS (TLS encryption) in transit.</li>
+            <li>Communication with Anthropic's AI service uses HTTPS (TLS encryption) in transit, routed through our secure proxy server.</li>
         </ul>
 
         <hr>
